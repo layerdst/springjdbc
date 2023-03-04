@@ -33,4 +33,12 @@
       - db close 메소드 구현 close()
     - Test 메소드 구현
       - memberRepositoryV1.crud()
-
+   - 0304 코딩내용
+    - Transaction 이해와 적용
+      - Transaction 적용
+        - Transaction 시작 - setAutocommit(false)
+        - Transaction 실패 - rollack()
+        - Transaction 성공 - commit()
+        - Transaction 종료 - setAutocommit(true) / close()
+      - 회원간의 계좌이체 비즈니스 로직 - memberServiceV2.accountTransfer(fromId, toId, money)
+     
