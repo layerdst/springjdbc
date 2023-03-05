@@ -41,4 +41,8 @@
         - Transaction 성공 - commit()
         - Transaction 종료 - setAutocommit(true) / close()
       - 회원간의 계좌이체 비즈니스 로직 - memberServiceV2.accountTransfer(fromId, toId, money)
-     
+   -0305 코딩내용
+    - Transaction 개선
+      - TransactionManager을 주입하여 TransactionTempate 을 활용  
+      - 트랜잭션 템플릿을 활용한 코드개선 - MemberServiceV3_2.accountTransfer()
+      - 기존에 setAutoCommit과 close를 코드의 반복을 줄일 수 있음
