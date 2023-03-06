@@ -6,7 +6,7 @@
       - mysql-connector j
       - lombok
       
-  - 0302 코딩내용
+  - 230302 코딩내용
     - JDBC 를 활용한 회원정보 CRUD
       - MYSQL 테이블 생성
       - 회원정보 생성 memberRepositoryV0.save()
@@ -33,7 +33,7 @@
       - db close 메소드 구현 close()
     - Test 메소드 구현
       - memberRepositoryV1.crud()
-   - 0304 코딩내용
+  - 0304 코딩내용
     - Transaction 이해와 적용
       - Transaction 적용
         - Transaction 시작 - setAutocommit(false)
@@ -41,8 +41,23 @@
         - Transaction 성공 - commit()
         - Transaction 종료 - setAutocommit(true) / close()
       - 회원간의 계좌이체 비즈니스 로직 - memberServiceV2.accountTransfer(fromId, toId, money)
-   -0305 코딩내용
+  - 0305 코딩내용
     - Transaction 개선
       - TransactionManager을 주입하여 TransactionTempate 을 활용  
       - 트랜잭션 템플릿을 활용한 코드개선 - MemberServiceV3_2.accountTransfer()
       - 기존에 setAutoCommit과 close를 코드의 반복을 줄일 수 있음
+  - 0306 코딩내용
+    - 비즈니스 로직 내 트랜잭션 처리를 코드 내용을 Transaction AOP로 대체하여, 가독성을 높임
+    - 또한 비즈니스 로직을 완벽히 분리할수 있었음
+    - Transaction AOP - (선언적 트랜잭션) 해당 로직 메소드에 @Transacion 을 삽입
+      - Transaction 시작 
+        - transactionManager.getTransaction()
+        - dataSource.getConnection()
+        - conn.setAutoCommit(false)
+      - Transaction 동기화 매니저
+        - 보관된 커넥션을 활용해 동기화 커넥션을 획득
+        - 비즈니스 로직 수행
+      - Transaction 종료
+        - setAutoCommit(auto);
+        - connection 반환
+      
