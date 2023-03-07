@@ -60,4 +60,16 @@
       - Transaction 종료
         - setAutoCommit(auto);
         - connection 반환
+    - 0307 코딩내용
+      - Checked 예외 
+        - 컴파일러가 체크하는 예외 -> 비즈니스 로직상 필요한 부분만 작성
+        - CheckedTest
+        - 예외 발생하면 Controller, Service 에서의 상위 계층으로 전달되는데, 유지보수 관점에서 예외처리 과정이 종속적일 수 있다.
+        - 예외 발생시 Controller 계층까지 이동할 경우 예외의 노출로 보안이슈가 발생할 수 있다.
+        - 따라서 Unchecked 예외를 기본으로 하고, 별도의 비즈니스 로직에서 커스텀 예외는 Checked 예외로 
+      - UnChecked 예외 
+        - 런타임 예외 -> 기본 예외처리는 이것으로 한다
+        - UnCheckedTest
+       
+
       
