@@ -70,6 +70,10 @@
       - UnChecked 예외 
         - 런타임 예외 -> 기본 예외처리는 이것으로 한다
         - UnCheckedTest
-       
-
+        - throws 생략이 가능하다
+    - 0308 코딩내용
+      - Check 예외의 활용 : CheckedAppTest
+      - UnCheck 예외의 활용 : UnCheckedAppTest
+    - 0309 코딩내용
+      - Uncheck 예외 interface 
       
