@@ -16,6 +16,16 @@ public class UncheckedAppTest {
         Assertions.assertThatThrownBy(()->controller.req()).isInstanceOf(Exception.class);
     }
 
+    @Test
+    void printEx(){
+        Controller con = new Controller();
+        try{
+            con.req();
+        }catch (Exception e){
+            log.info("ex", e);
+        }
+    }
+
     static class Controller{
         CheckedAppTest.Service service = new CheckedAppTest.Service();
         public void req() throws SQLException, ConnectException {
