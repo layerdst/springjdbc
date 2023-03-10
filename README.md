@@ -75,5 +75,10 @@
       - Check 예외의 활용 : CheckedAppTest
       - UnCheck 예외의 활용 : UnCheckedAppTest
     - 0309 코딩내용
-      - Uncheck 예외 interface 
+      - Uncheck 예외 interface 생성 : MyDbException
+    - 0310 코딩내용
+      - Uncheck interface 적용
+        - MemberRepositoryV4
+        - MemberServiceV4
+        
       
