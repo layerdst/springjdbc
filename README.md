@@ -81,4 +81,5 @@
         - MemberRepositoryV4
         - MemberServiceV4
         
-      
+    - 0311 코딩내용
+      - 예외 추상화 적용 : SQLErrorCodeSQLExceptionTranslator 활용
