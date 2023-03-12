@@ -3,11 +3,11 @@ package hello.jdbc.service;
 import hello.jdbc.domain.Member;
 import hello.jdbc.repository.MemberRepository;
 import hello.jdbc.repository.MemberRepositoryV3;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.SQLException;
-
-public class MemberServiceV4 {
+@Service
+public class MemberServiceV4 implements MemberService{
 
     private final MemberRepository memberRepository;
 
@@ -18,6 +18,11 @@ public class MemberServiceV4 {
     @Transactional
     public void accountTransfer(String fromId, String toId, int money) {
         bizLogic(fromId, toId, money);
+    }
+
+    @Override
+    public Member findById(String memberId) {
+        return memberRepository.findById(memberId);
     }
 
     private void bizLogic( String fromId, String toId, int money)  {
