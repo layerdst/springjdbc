@@ -1,4 +1,4 @@
-## Spring JDBC 강의(230301~)
+## Spring JDBC 강의(230301~230313)
   - 230301 코딩내용
     - SpringBoot Setting
       - SpringBoot Version 2.7.9
