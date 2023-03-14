@@ -4,8 +4,7 @@ import hello.jdbc.domain.Member;
 import hello.jdbc.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -14,9 +13,22 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    @GetMapping
+    @GetMapping("/user/")
     public Member findById(String memberId){
         return memberService.findById(memberId);
+    }
+
+    @PostMapping("/user/{id}/{money}")
+    public void update(@PathVariable("id") String memberId,
+                      @PathVariable("money") int money){
+        memberService.update(memberId, money);
+    }
+
+    @PostMapping("/account")
+    public void transferMoney(@RequestParam String fromMemberId,
+                              @RequestParam String toMemberId,
+                              @RequestParam int money){
+        memberService.accountTransfer(fromMemberId, toMemberId, money);
     }
 
 }

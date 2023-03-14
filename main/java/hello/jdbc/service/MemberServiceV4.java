@@ -25,6 +25,11 @@ public class MemberServiceV4 implements MemberService{
         return memberRepository.findById(memberId);
     }
 
+    @Override
+    public void update(String memberId, int money) {
+        memberRepository.update(memberId, money);
+    }
+
     private void bizLogic( String fromId, String toId, int money)  {
         Member fromMember = memberRepository.findById(fromId);
         Member toMember = memberRepository.findById(toId);
